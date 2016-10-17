@@ -33,7 +33,7 @@ class PagamentoFormasTable extends Table
         parent::initialize($config);
 
         $this->table('pagamento_formas');
-        $this->displayField('id');
+        $this->displayField('descricao');
         $this->primaryKey('id');
 
         $this->hasMany('PostoPagamentoForma', [

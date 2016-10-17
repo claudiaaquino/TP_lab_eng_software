@@ -35,7 +35,7 @@ class FuelsTable extends Table
         parent::initialize($config);
 
         $this->table('fuels');
-        $this->displayField('id');
+        $this->displayField('descricao');
         $this->primaryKey('id');
 
         $this->hasMany('HistoricoPrecos', [

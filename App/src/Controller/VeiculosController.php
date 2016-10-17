@@ -36,10 +36,16 @@ class VeiculosController extends AppController {
      */
     public function view($id = null) {
         $veiculo = $this->Veiculos->get($id, [
-            'contain' => ['Users', 'Modelos', 'HistoricoAbastecimentos', 'VeiculoFuels']
+            'contain' => [ 'Modelos', 'HistoricoAbastecimentos', 'VeiculoFuels']
         ]);
 
+        $combustiveis = $this->Veiculos->find()
+                ->innerJoinWith('VeiculoFuels.Fuels')->select('Fuels.descricao')
+                ->where(['Veiculos.id' => $id])
+                ->all();
+
         $this->set('veiculo', $veiculo);
+        $this->set('combustiveis', $combustiveis);
         $this->set('_serialize', ['veiculo']);
     }
 
@@ -52,6 +58,7 @@ class VeiculosController extends AppController {
         $veiculo = $this->Veiculos->newEntity();
         if ($this->request->is('post')) {
             $veiculo = $this->Veiculos->patchEntity($veiculo, $this->request->data);
+            $veiculo->user_id = $this->Auth->user('id');
             if ($this->Veiculos->save($veiculo)) {
                 $this->Flash->success(__('The veiculo has been saved.'));
 
@@ -60,9 +67,9 @@ class VeiculosController extends AppController {
                 $this->Flash->error(__('The veiculo could not be saved. Please, try again.'));
             }
         }
-        $users = $this->Veiculos->Users->find('list', ['limit' => 200]);
-        $modelos = $this->Veiculos->Modelos->find('list', ['limit' => 200]);
-        $this->set(compact('veiculo', 'users', 'modelos'));
+
+        $modelos = $this->Veiculos->Modelos->find('list');
+        $this->set(compact('veiculo', 'modelos'));
         $this->set('_serialize', ['veiculo']);
     }
 

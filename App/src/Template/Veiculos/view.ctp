@@ -4,9 +4,9 @@
         <li><?= $this->Html->link(__('Editar Veiculo'), ['action' => 'edit', $veiculo->id]) ?> </li>
         <li><?= $this->Form->postLink(__('Deletar Veiculo'), ['action' => 'delete', $veiculo->id], ['confirm' => __('Are you sure you want to delete # {0}?', $veiculo->id)]) ?> </li>
         <li><?= $this->Html->link(__('Meus Veiculos'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('Historico de Abastecimentos'), ['controller' => 'HistoricoAbastecimentos', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('Registrar Abastecimento'), ['controller' => 'HistoricoAbastecimentos', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('Combustíveis'), ['controller' => 'VeiculoFuels', 'action' => 'index', $veiculo->id]) ?> </li>
+        <li><?= $this->Html->link(__('Historico de Abastecimentos'), ['controller' => 'HistoricoAbastecimentos', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('Vincular Combustível'), ['controller' => 'VeiculoFuels', 'action' => 'index', $veiculo->id]) ?> </li>
     </ul>
 </nav>
 <div class="veiculos view large-9 medium-8 columns content">
@@ -14,7 +14,7 @@
     <table class="vertical-table">        
         <tr>
             <th scope="row"><?= __('Modelo') ?></th>
-            <td><?= $veiculo->has('modelo') ? $this->Html->link($veiculo->modelo->id, ['controller' => 'Modelos', 'action' => 'view', $veiculo->modelo->id]) : '' ?></td>
+            <td><?= $veiculo->modelo->descricao;?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Placa') ?></th>
@@ -66,10 +66,23 @@
         <table cellpadding="0" cellspacing="0">            
             <?php foreach ($veiculo->veiculo_fuels as $veiculoFuels): ?>
             <tr>
-                <td><?= h($veiculoFuels->fuel_id) ?></td>
                 <td class="actions">
                     <?= $this->Form->postLink(__('Delete'), ['controller' => 'VeiculoFuels', 'action' => 'delete', $veiculoFuels->id], ['confirm' => __('Are you sure you want to delete # {0}?', $veiculoFuels->id)]) ?>
                 </td>
+            </tr>
+            <?php endforeach; ?>
+        </table>
+        <?php endif; ?>
+    </div>
+    <div class="related">
+        <h4><?= __('Combustíveis') ?></h4>
+        <?php if (!empty($combustiveis)): ?>
+        <table cellpadding="0" cellspacing="0">            
+            <?php foreach ($combustiveis as $combustivel): ?>
+            <tr>
+                <td><?= print_r(h($combustivel->descricao)); ?></td>
+                <td><?= print_r(h($combustivel)); ?></td>
+               
             </tr>
             <?php endforeach; ?>
         </table>

@@ -36,7 +36,7 @@ class VeiculosTable extends Table
         parent::initialize($config);
 
         $this->table('veiculos');
-        $this->displayField('id');
+        $this->displayField('placa');
         $this->primaryKey('id');
 
         $this->belongsTo('Users', [

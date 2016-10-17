@@ -33,7 +33,7 @@ class ModelosTable extends Table
         parent::initialize($config);
 
         $this->table('modelos');
-        $this->displayField('id');
+        $this->displayField('descricao');
         $this->primaryKey('id');
 
         $this->hasMany('Veiculos', [
