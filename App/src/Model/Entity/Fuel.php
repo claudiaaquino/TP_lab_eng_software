@@ -12,9 +12,9 @@ use Cake\ORM\Entity;
  * @property \Cake\I18n\Time $dt_modificado
  * @property int $status
  *
- * @property \App\Model\Entity\HistoricoPreco[] $historico_precos
- * @property \App\Model\Entity\PostoFuel[] $posto_fuels
- * @property \App\Model\Entity\VeiculoFuel[] $veiculo_fuels
+ * @property \App\Model\Entity\Historicopreco[] $historicoprecos
+ * @property \App\Model\Entity\Postofuel[] $postofuels
+ * @property \App\Model\Entity\Veiculofuel[] $veiculofuels
  */
 class Fuel extends Entity
 {

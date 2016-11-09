@@ -43,7 +43,14 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                 <ul class="right">
 
                     <?php if ($loggedIn) { ?>
-                        <li><?= $this->Html->link('Home', ['controller' => 'veiculos', 'action' => 'index']) ?></li>
+                        <?php if ($tipousuario == 2) { ?>
+                            <!--<li></?= $this->Html->link(__('Novo Veiculo'), ['action' => 'add']) ?></li>-->
+                            <li><?= $this->Html->link('Meus Veículos', ['controller' => 'veiculos', 'action' => 'index']) ?></li>
+                            <!--<li></?= $this->Html->link(__('Registrar Abastecimento'), ['controller' => 'Historicoabastecimentos', 'action' => 'add'/*, $veiculo->id*/]) ?> </li>-->
+                            <li><?= $this->Html->link(__('Abastecimentos'), ['controller' => 'Historicoabastecimentos', 'action' => 'index'/* , $veiculo->id */]) ?> </li>
+                            <li><?= $this->Html->link(__('Combustíveis'), ['controller' => 'Veiculofuels', 'action' => 'index'/* , $veiculo->id */]) ?> </li>
+                        <?php } ?>
+
                         <li><?= $this->Html->link('Sair', ['controller' => 'users', 'action' => 'logout']) ?></li>
                     <?php } else { ?>
                         <!--<li><?//= $this->Html->link('Login', ['controller' => 'users', 'action' => 'login']) ?></li>-->
@@ -54,6 +61,24 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
         </nav>
         <?= $this->Flash->render() ?>
         <div class="container clearfix">
+            <?php if ($loggedIn && $tipousuario != 2) { ?>
+                <nav class="large-2 medium-4 columns" id="actions-sidebar">
+                    <ul class="side-nav">
+                        <?php if ($tipousuario == 1) { ?>
+                            <li><?= $this->Html->link(__('Modelos'), ['controller' => 'Modelos', 'action' => 'index']) ?></li>
+                            <li><?= $this->Html->link(__('Combustíveis'), ['controller' => 'Fuels', 'action' => 'index']) ?></li>
+                            <li><?= $this->Html->link(__('Formas de Pagamento'), ['controller' => 'Pagamentoformas', 'action' => 'index']) ?></li>
+                            <li><?= $this->Html->link(__('Postos'), ['controller' => 'Postos', 'action' => 'index']) ?></li>
+
+                        <?php } else if ($tipousuario == 3) { ?>
+                            <li><?= $this->Html->link(__('Histórico de Preço'), ['controller' => 'Historicoprecos', 'action' => 'index']) ?></li>
+                            <li><?= $this->Html->link(__('Histórico de Abastecimentos'), ['controller' => 'Historicoabastecimentos', 'action' => 'index']) ?></li>
+                            <li><?= $this->Html->link(__('Combustíveis'), ['controller' => 'Postofuels', 'action' => 'index']) ?></li>
+                            <li><?= $this->Html->link(__('Formas de Pagamento'), ['controller' => 'Postopagamentoformas', 'action' => 'index']) ?></li>
+                        <?php } ?>
+                    </ul>
+                </nav>
+            <?php } ?>
             <?= $this->fetch('content') ?>
         </div>
         <footer>

@@ -4,10 +4,10 @@ namespace App\Test\Fixture;
 use Cake\TestSuite\Fixture\TestFixture;
 
 /**
- * VeiculoFuelsFixture
+ * VeiculofuelsFixture
  *
  */
-class VeiculoFuelsFixture extends TestFixture
+class VeiculofuelsFixture extends TestFixture
 {
 
     /**
@@ -42,7 +42,7 @@ class VeiculoFuelsFixture extends TestFixture
             'id' => 1,
             'veiculo_id' => 1,
             'fuel_id' => 1,
-            'dt_cadastro' => 1476331618,
+            'dt_cadastro' => 1477447023,
             'status' => 1
         ],
     ];

@@ -52,11 +52,11 @@ class ModelosController extends AppController
         if ($this->request->is('post')) {
             $modelo = $this->Modelos->patchEntity($modelo, $this->request->data);
             if ($this->Modelos->save($modelo)) {
-                $this->Flash->success(__('The modelo has been saved.'));
+                $this->Flash->success(__('O registro de modelo foi salvo.'));
 
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error(__('The modelo could not be saved. Please, try again.'));
+                $this->Flash->error(__('O registro de modelo não pôde ser salvo. Por favor, tente novamente.'));
             }
         }
         $this->set(compact('modelo'));
@@ -78,11 +78,11 @@ class ModelosController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $modelo = $this->Modelos->patchEntity($modelo, $this->request->data);
             if ($this->Modelos->save($modelo)) {
-                $this->Flash->success(__('The modelo has been saved.'));
+                $this->Flash->success(__('O registro de modelo foi salvo.'));
 
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error(__('The modelo could not be saved. Please, try again.'));
+                $this->Flash->error(__('O registro de modelo não pôde ser salvo. Por favor, tente novamente.'));
             }
         }
         $this->set(compact('modelo'));
@@ -101,9 +101,9 @@ class ModelosController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $modelo = $this->Modelos->get($id);
         if ($this->Modelos->delete($modelo)) {
-            $this->Flash->success(__('The modelo has been deleted.'));
+            $this->Flash->success(__('O registro de modelo foi deletado.'));
         } else {
-            $this->Flash->error(__('The modelo could not be deleted. Please, try again.'));
+            $this->Flash->error(__('O registro de modelo não pôde ser deletado. Por favor, tente novamente.'));
         }
 
         return $this->redirect(['action' => 'index']);

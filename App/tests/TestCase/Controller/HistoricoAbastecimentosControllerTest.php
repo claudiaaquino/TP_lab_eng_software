@@ -16,12 +16,12 @@ class HistoricoAbastecimentosControllerTest extends IntegrationTestCase
      * @var array
      */
     public $fixtures = [
-        'app.historico_abastecimentos',
+        'app.historicoabastecimentos',
         'app.veiculos',
         'app.users',
         'app.modelos',
-        'app.veiculo_fuels',
-        'app.historico_precos'
+        'app.veiculofuels',
+        'app.historicoprecos'
     ];
 
     /**

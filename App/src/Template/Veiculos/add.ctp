@@ -1,11 +1,3 @@
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Menu') ?></li>
-        <li><?= $this->Html->link(__('Meus Veiculos'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('Registrar Abastecimento'), ['controller' => 'HistoricoAbastecimentos', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('Historico de Abastecimentos'), ['controller' => 'HistoricoAbastecimentos', 'action' => 'index']) ?> </li>
-    </ul>
-</nav>
 <div class="veiculos form large-9 medium-8 columns content">
     <?= $this->Form->create($veiculo) ?>
     <fieldset>

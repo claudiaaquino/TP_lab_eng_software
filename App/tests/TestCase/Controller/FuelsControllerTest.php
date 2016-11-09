@@ -17,9 +17,9 @@ class FuelsControllerTest extends IntegrationTestCase
      */
     public $fixtures = [
         'app.fuels',
-        'app.historico_precos',
-        'app.posto_fuels',
-        'app.veiculo_fuels'
+        'app.historicoprecos',
+        'app.postofuels',
+        'app.veiculofuels'
     ];
 
     /**

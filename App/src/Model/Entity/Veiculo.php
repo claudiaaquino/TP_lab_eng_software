@@ -17,8 +17,8 @@ use Cake\ORM\Entity;
  *
  * @property \App\Model\Entity\User $user
  * @property \App\Model\Entity\Modelo $modelo
- * @property \App\Model\Entity\HistoricoAbastecimento[] $historico_abastecimentos
- * @property \App\Model\Entity\VeiculoFuel[] $veiculo_fuels
+ * @property \App\Model\Entity\Historicoabastecimento[] $historicoabastecimentos
+ * @property \App\Model\Entity\Veiculofuel[] $veiculofuels
  */
 class Veiculo extends Entity
 {

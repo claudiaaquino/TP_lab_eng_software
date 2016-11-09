@@ -9,9 +9,9 @@ use Cake\Validation\Validator;
 /**
  * Fuels Model
  *
- * @property \Cake\ORM\Association\HasMany $HistoricoPrecos
- * @property \Cake\ORM\Association\HasMany $PostoFuels
- * @property \Cake\ORM\Association\HasMany $VeiculoFuels
+ * @property \Cake\ORM\Association\HasMany $Historicoprecos
+ * @property \Cake\ORM\Association\HasMany $Postofuels
+ * @property \Cake\ORM\Association\HasMany $Veiculofuels
  *
  * @method \App\Model\Entity\Fuel get($primaryKey, $options = [])
  * @method \App\Model\Entity\Fuel newEntity($data = null, array $options = [])
@@ -38,14 +38,13 @@ class FuelsTable extends Table
         $this->displayField('descricao');
         $this->primaryKey('id');
 
-        $this->hasMany('HistoricoPrecos', [
+        $this->hasMany('Historicoprecos', [
             'foreignKey' => 'fuel_id'
         ]);
-        $this->belongsToMany('Postos', [
-            'through' => 'PostoFuels',
+        $this->hasMany('Postofuels', [
             'foreignKey' => 'fuel_id'
         ]);
-        $this->hasMany('VeiculoFuels', [
+        $this->hasMany('Veiculofuels', [
             'foreignKey' => 'fuel_id'
         ]);
     }

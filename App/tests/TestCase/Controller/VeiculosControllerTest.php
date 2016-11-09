@@ -19,8 +19,8 @@ class VeiculosControllerTest extends IntegrationTestCase
         'app.veiculos',
         'app.users',
         'app.modelos',
-        'app.historico_abastecimentos',
-        'app.veiculo_fuels'
+        'app.historicoabastecimentos',
+        'app.veiculofuels'
     ];
 
     /**

@@ -9,9 +9,10 @@ use Cake\Validation\Validator;
 /**
  * Postos Model
  *
- * @property \Cake\ORM\Association\HasMany $HistoricoPrecos
- * @property \Cake\ORM\Association\HasMany $PostoFuels
- * @property \Cake\ORM\Association\HasMany $PostoPagamentoForma
+ * @property \Cake\ORM\Association\HasMany $Historicoprecos
+ * @property \Cake\ORM\Association\HasMany $Postofuels
+ * @property \Cake\ORM\Association\HasMany $Postopagamentoformas
+ * @property \Cake\ORM\Association\BelongsTo $Users
  *
  * @method \App\Model\Entity\Posto get($primaryKey, $options = [])
  * @method \App\Model\Entity\Posto newEntity($data = null, array $options = [])
@@ -38,17 +39,16 @@ class PostosTable extends Table
         $this->displayField('nome');
         $this->primaryKey('id');
 
-        $this->hasMany('HistoricoPrecos', [
+        $this->hasMany('Historicoprecos', [
             'foreignKey' => 'posto_id'
         ]);
-//        $this->hasMany('PostoFuels', [
-//            'foreignKey' => 'posto_id'
-//        ]);
-        $this->belongsToMany('Fuels', [
-            'through' => 'PostoFuels',
+        $this->hasMany('Postofuels', [
             'foreignKey' => 'posto_id'
         ]);
-        $this->hasMany('PostoPagamentoForma', [
+        $this->belongsTo('Users', [
+            'foreignKey' => 'user_id'
+        ]);
+        $this->hasMany('Postopagamentoformas', [
             'foreignKey' => 'posto_id'
         ]);
     }

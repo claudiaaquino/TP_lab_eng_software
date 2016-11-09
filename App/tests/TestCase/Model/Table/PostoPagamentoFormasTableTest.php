@@ -1,22 +1,22 @@
 <?php
 namespace App\Test\TestCase\Model\Table;
 
-use App\Model\Table\PostoPagamentoFormasTable;
+use App\Model\Table\PostopagamentoformasTable;
 use Cake\ORM\TableRegistry;
 use Cake\TestSuite\TestCase;
 
 /**
- * App\Model\Table\PostoPagamentoFormasTable Test Case
+ * App\Model\Table\PostopagamentoformasTable Test Case
  */
-class PostoPagamentoFormasTableTest extends TestCase
+class PostopagamentoformasTableTest extends TestCase
 {
 
     /**
      * Test subject
      *
-     * @var \App\Model\Table\PostoPagamentoFormasTable
+     * @var \App\Model\Table\PostopagamentoformasTable
      */
-    public $PostoPagamentoFormas;
+    public $Postopagamentoformas;
 
     /**
      * Fixtures
@@ -24,18 +24,21 @@ class PostoPagamentoFormasTableTest extends TestCase
      * @var array
      */
     public $fixtures = [
-        'app.posto_pagamento_formas',
+        'app.postopagamentoformas',
         'app.postos',
-        'app.historico_precos',
+        'app.historicoprecos',
         'app.fuels',
-        'app.posto_fuels',
-        'app.veiculo_fuels',
+        'app.postofuels',
+        'app.veiculofuels',
+        'app.historicoabastecimentos',
         'app.veiculos',
         'app.users',
+        'app.tipousuarios',
         'app.modelos',
-        'app.historico_abastecimentos',
-        'app.posto_pagamento_forma',
-        'app.pagamento_formas'
+        'app.historicoabastecimentos',
+        'app.historicoprecos',
+        'app.postopagamentoforma',
+        'app.pagamentoformas'
     ];
 
     /**
@@ -46,8 +49,8 @@ class PostoPagamentoFormasTableTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $config = TableRegistry::exists('PostoPagamentoFormas') ? [] : ['className' => 'App\Model\Table\PostoPagamentoFormasTable'];
-        $this->PostoPagamentoFormas = TableRegistry::get('PostoPagamentoFormas', $config);
+        $config = TableRegistry::exists('Postopagamentoformas') ? [] : ['className' => 'App\Model\Table\PostopagamentoformasTable'];
+        $this->Postopagamentoformas = TableRegistry::get('Postopagamentoformas', $config);
     }
 
     /**
@@ -57,7 +60,7 @@ class PostoPagamentoFormasTableTest extends TestCase
      */
     public function tearDown()
     {
-        unset($this->PostoPagamentoFormas);
+        unset($this->Postopagamentoformas);
 
         parent::tearDown();
     }

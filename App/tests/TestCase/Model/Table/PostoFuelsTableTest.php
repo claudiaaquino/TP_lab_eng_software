@@ -1,22 +1,22 @@
 <?php
 namespace App\Test\TestCase\Model\Table;
 
-use App\Model\Table\PostoFuelsTable;
+use App\Model\Table\PostofuelsTable;
 use Cake\ORM\TableRegistry;
 use Cake\TestSuite\TestCase;
 
 /**
- * App\Model\Table\PostoFuelsTable Test Case
+ * App\Model\Table\PostofuelsTable Test Case
  */
-class PostoFuelsTableTest extends TestCase
+class PostofuelsTableTest extends TestCase
 {
 
     /**
      * Test subject
      *
-     * @var \App\Model\Table\PostoFuelsTable
+     * @var \App\Model\Table\PostofuelsTable
      */
-    public $PostoFuels;
+    public $Postofuels;
 
     /**
      * Fixtures
@@ -24,16 +24,20 @@ class PostoFuelsTableTest extends TestCase
      * @var array
      */
     public $fixtures = [
-        'app.posto_fuels',
+        'app.postofuels',
         'app.postos',
-        'app.historico_precos',
+        'app.historicoprecos',
         'app.fuels',
-        'app.veiculo_fuels',
+        'app.postofuels',
+        'app.veiculofuels',
+        'app.historicoabastecimentos',
         'app.veiculos',
         'app.users',
+        'app.tipousuarios',
         'app.modelos',
-        'app.historico_abastecimentos',
-        'app.posto_pagamento_forma'
+        'app.historicoabastecimentos',
+        'app.historicoprecos',
+        'app.postopagamentoforma'
     ];
 
     /**
@@ -44,8 +48,8 @@ class PostoFuelsTableTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $config = TableRegistry::exists('PostoFuels') ? [] : ['className' => 'App\Model\Table\PostoFuelsTable'];
-        $this->PostoFuels = TableRegistry::get('PostoFuels', $config);
+        $config = TableRegistry::exists('Postofuels') ? [] : ['className' => 'App\Model\Table\PostofuelsTable'];
+        $this->Postofuels = TableRegistry::get('Postofuels', $config);
     }
 
     /**
@@ -55,7 +59,7 @@ class PostoFuelsTableTest extends TestCase
      */
     public function tearDown()
     {
-        unset($this->PostoFuels);
+        unset($this->Postofuels);
 
         parent::tearDown();
     }

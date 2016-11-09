@@ -16,15 +16,15 @@ class VeiculoFuelsControllerTest extends IntegrationTestCase
      * @var array
      */
     public $fixtures = [
-        'app.veiculo_fuels',
+        'app.veiculofuels',
         'app.veiculos',
         'app.users',
         'app.modelos',
-        'app.historico_abastecimentos',
-        'app.historico_precos',
+        'app.historicoabastecimentos',
+        'app.historicoprecos',
         'app.postos',
-        'app.posto_fuels',
-        'app.posto_pagamento_forma',
+        'app.postofuels',
+        'app.postopagamentoforma',
         'app.fuels'
     ];
 

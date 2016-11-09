@@ -25,9 +25,9 @@ class PostosTableTest extends TestCase
      */
     public $fixtures = [
         'app.postos',
-        'app.historico_precos',
-        'app.posto_fuels',
-        'app.posto_pagamento_forma'
+        'app.historicoprecos',
+        'app.postofuels',
+        'app.postopagamentoforma'
     ];
 
     /**

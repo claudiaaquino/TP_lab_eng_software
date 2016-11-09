@@ -4,10 +4,10 @@ namespace App\Test\Fixture;
 use Cake\TestSuite\Fixture\TestFixture;
 
 /**
- * HistoricoAbastecimentosFixture
+ * HistoricoabastecimentosFixture
  *
  */
-class HistoricoAbastecimentosFixture extends TestFixture
+class HistoricoabastecimentosFixture extends TestFixture
 {
 
     /**
@@ -19,7 +19,7 @@ class HistoricoAbastecimentosFixture extends TestFixture
     public $fields = [
         'id' => ['type' => 'integer', 'length' => 10, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'autoIncrement' => true, 'precision' => null],
         'veiculo_id' => ['type' => 'integer', 'length' => 10, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
-        'historico_preco_id' => ['type' => 'integer', 'length' => 10, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
+        'historicopreco_id' => ['type' => 'integer', 'length' => 10, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
         'litros' => ['type' => 'float', 'length' => null, 'precision' => null, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => ''],
         'valor_total' => ['type' => 'float', 'length' => null, 'precision' => null, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => ''],
         'km_atual' => ['type' => 'integer', 'length' => 10, 'unsigned' => false, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
@@ -46,13 +46,13 @@ class HistoricoAbastecimentosFixture extends TestFixture
         [
             'id' => 1,
             'veiculo_id' => 1,
-            'historico_preco_id' => 1,
+            'historicopreco_id' => 1,
             'litros' => 1,
             'valor_total' => 1,
             'km_atual' => 1,
             'consumo_ult_abastecimento' => 1,
             'avaliacao_posto' => 1,
-            'dt_abastecimento' => 1476330779,
+            'dt_abastecimento' => 1477446929,
             'status' => 1
         ],
     ];

@@ -11,8 +11,8 @@ use Cake\Validation\Validator;
  *
  * @property \Cake\ORM\Association\BelongsTo $Users
  * @property \Cake\ORM\Association\BelongsTo $Modelos
- * @property \Cake\ORM\Association\HasMany $HistoricoAbastecimentos
- * @property \Cake\ORM\Association\HasMany $VeiculoFuels
+ * @property \Cake\ORM\Association\HasMany $Historicoabastecimentos
+ * @property \Cake\ORM\Association\HasMany $Veiculofuels
  *
  * @method \App\Model\Entity\Veiculo get($primaryKey, $options = [])
  * @method \App\Model\Entity\Veiculo newEntity($data = null, array $options = [])
@@ -47,10 +47,10 @@ class VeiculosTable extends Table
             'foreignKey' => 'modelo_id',
             'joinType' => 'INNER'
         ]);
-        $this->hasMany('HistoricoAbastecimentos', [
+        $this->hasMany('Historicoabastecimentos', [
             'foreignKey' => 'veiculo_id'
         ]);
-        $this->hasMany('VeiculoFuels', [
+        $this->hasMany('Veiculofuels', [
             'foreignKey' => 'veiculo_id'
         ]);
     }

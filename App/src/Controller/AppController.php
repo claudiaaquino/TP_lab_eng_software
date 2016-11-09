@@ -46,8 +46,8 @@ class AppController extends Controller {
 
         $this->loadComponent('Auth', [
             'loginRedirect' => [
-                'controller' => 'Veiculos',
-                'action' => 'index'
+                'controller' => 'App',
+                'action' => 'verificaTipoUsuario'
             ],
             'authenticate' => [
                 'Form' => [
@@ -77,10 +77,24 @@ class AppController extends Controller {
         }
 
 
-        if ($this->request->session()->read('Auth.User')) {
+        if ($tipousuario = $this->request->session()->read('Auth.User.tipousuario_id')) {
+
+            $this->set("tipousuario", $tipousuario);
             $this->set("loggedIn", true);
         } else {
+            $this->set("tipousuario", false);
             $this->set("loggedIn", false);
+        }
+    }
+
+    public function verificaTipoUsuario() {
+        $tipo = $this->request->session()->read('Auth.User.tipousuario_id');
+        if ($tipo == '1') {
+            return $this->redirect(['controller' => 'Postos', 'action' => 'index']);
+        } else if ($tipo == '2') {
+            return $this->redirect(['controller' => 'Veiculos', 'action' => 'index']);
+        } else if ($tipo == '3') {
+            return $this->redirect(['controller' => 'Postos', 'action' => 'index']);
         }
     }
 

@@ -27,8 +27,8 @@ class VeiculosTableTest extends TestCase
         'app.veiculos',
         'app.users',
         'app.modelos',
-        'app.historico_abastecimentos',
-        'app.veiculo_fuels'
+        'app.historicoabastecimentos',
+        'app.veiculofuels'
     ];
 
     /**

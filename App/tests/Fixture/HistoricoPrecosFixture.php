@@ -4,10 +4,10 @@ namespace App\Test\Fixture;
 use Cake\TestSuite\Fixture\TestFixture;
 
 /**
- * HistoricoPrecosFixture
+ * HistoricoprecosFixture
  *
  */
-class HistoricoPrecosFixture extends TestFixture
+class HistoricoprecosFixture extends TestFixture
 {
 
     /**
@@ -44,7 +44,7 @@ class HistoricoPrecosFixture extends TestFixture
             'posto_id' => 1,
             'fuel_id' => 1,
             'preco_litro' => 1,
-            'dt_cadastro' => 1476330788,
+            'dt_cadastro' => 1477446948,
             'status' => 1
         ],
     ];

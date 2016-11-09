@@ -36,11 +36,11 @@ class VeiculosController extends AppController {
      */
     public function view($id = null) {
         $veiculo = $this->Veiculos->get($id, [
-            'contain' => [ 'Modelos', 'HistoricoAbastecimentos', 'VeiculoFuels']
+            'contain' => [ 'Modelos', 'Historicoabastecimentos', 'Veiculofuels']
         ]);
 
         $combustiveis = $this->Veiculos->find()
-                ->innerJoinWith('VeiculoFuels.Fuels')->select('Fuels.descricao')
+                ->innerJoinWith('Veiculofuels.Fuels')->select('Fuels.descricao')
                 ->where(['Veiculos.id' => $id])
                 ->all();
 
@@ -60,11 +60,11 @@ class VeiculosController extends AppController {
             $veiculo = $this->Veiculos->patchEntity($veiculo, $this->request->data);
             $veiculo->user_id = $this->Auth->user('id');
             if ($this->Veiculos->save($veiculo)) {
-                $this->Flash->success(__('The veiculo has been saved.'));
+                $this->Flash->success(__('O registro de veiculo foi salvo.'));
 
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error(__('The veiculo could not be saved. Please, try again.'));
+                $this->Flash->error(__('O registro de veiculo não pôde ser salvo. Por favor, tente novamente.'));
             }
         }
 
@@ -87,11 +87,11 @@ class VeiculosController extends AppController {
         if ($this->request->is(['patch', 'post', 'put'])) {
             $veiculo = $this->Veiculos->patchEntity($veiculo, $this->request->data);
             if ($this->Veiculos->save($veiculo)) {
-                $this->Flash->success(__('The veiculo has been saved.'));
+                $this->Flash->success(__('O registro de veiculo foi salvo.'));
 
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error(__('The veiculo could not be saved. Please, try again.'));
+                $this->Flash->error(__('O registro de veiculo não pôde ser salvo. Por favor, tente novamente.'));
             }
         }
         $users = $this->Veiculos->Users->find('list', ['limit' => 200]);
@@ -111,9 +111,9 @@ class VeiculosController extends AppController {
         $this->request->allowMethod(['post', 'delete']);
         $veiculo = $this->Veiculos->get($id);
         if ($this->Veiculos->delete($veiculo)) {
-            $this->Flash->success(__('The veiculo has been deleted.'));
+            $this->Flash->success(__('O registro de veiculo foi deletado.'));
         } else {
-            $this->Flash->error(__('The veiculo could not be deleted. Please, try again.'));
+            $this->Flash->error(__('O registro de veiculo não pôde ser deletado. Por favor, tente novamente.'));
         }
 
         return $this->redirect(['action' => 'index']);

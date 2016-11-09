@@ -1,17 +1,11 @@
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
+<nav class="large-1 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Fuel'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Historico Precos'), ['controller' => 'HistoricoPrecos', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Historico Preco'), ['controller' => 'HistoricoPrecos', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Posto Fuels'), ['controller' => 'PostoFuels', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Posto Fuel'), ['controller' => 'PostoFuels', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Veiculo Fuels'), ['controller' => 'VeiculoFuels', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Veiculo Fuel'), ['controller' => 'VeiculoFuels', 'action' => 'add']) ?></li>
+        <li class="heading"><?= __('Ações') ?></li>
+        <li><?= $this->Html->link(__('Novo'), ['action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="fuels index large-9 medium-8 columns content">
-    <h3><?= __('Fuels') ?></h3>
+    <h3><?= __('Combustíveis') ?></h3>
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
@@ -34,7 +28,7 @@
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $fuel->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $fuel->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $fuel->id], ['confirm' => __('Are you sure you want to delete # {0}?', $fuel->id)]) ?>
+                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $fuel->id], ['confirm' => __('Tem certeza que deseja deletar esse registro # {0}?', $fuel->id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>

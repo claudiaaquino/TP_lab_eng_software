@@ -1,22 +1,22 @@
 <?php
 namespace App\Test\TestCase\Model\Table;
 
-use App\Model\Table\PagamentoFormasTable;
+use App\Model\Table\PagamentoformasTable;
 use Cake\ORM\TableRegistry;
 use Cake\TestSuite\TestCase;
 
 /**
- * App\Model\Table\PagamentoFormasTable Test Case
+ * App\Model\Table\PagamentoformasTable Test Case
  */
-class PagamentoFormasTableTest extends TestCase
+class PagamentoformasTableTest extends TestCase
 {
 
     /**
      * Test subject
      *
-     * @var \App\Model\Table\PagamentoFormasTable
+     * @var \App\Model\Table\PagamentoformasTable
      */
-    public $PagamentoFormas;
+    public $Pagamentoformas;
 
     /**
      * Fixtures
@@ -24,8 +24,8 @@ class PagamentoFormasTableTest extends TestCase
      * @var array
      */
     public $fixtures = [
-        'app.pagamento_formas',
-        'app.posto_pagamento_forma'
+        'app.pagamentoformas',
+        'app.postopagamentoformas'
     ];
 
     /**
@@ -36,8 +36,8 @@ class PagamentoFormasTableTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $config = TableRegistry::exists('PagamentoFormas') ? [] : ['className' => 'App\Model\Table\PagamentoFormasTable'];
-        $this->PagamentoFormas = TableRegistry::get('PagamentoFormas', $config);
+        $config = TableRegistry::exists('Pagamentoformas') ? [] : ['className' => 'App\Model\Table\PagamentoformasTable'];
+        $this->Pagamentoformas = TableRegistry::get('Pagamentoformas', $config);
     }
 
     /**
@@ -47,7 +47,7 @@ class PagamentoFormasTableTest extends TestCase
      */
     public function tearDown()
     {
-        unset($this->PagamentoFormas);
+        unset($this->Pagamentoformas);
 
         parent::tearDown();
     }

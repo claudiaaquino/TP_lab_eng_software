@@ -1,22 +1,22 @@
 <?php
 namespace App\Test\TestCase\Model\Table;
 
-use App\Model\Table\HistoricoAbastecimentosTable;
+use App\Model\Table\HistoricoabastecimentosTable;
 use Cake\ORM\TableRegistry;
 use Cake\TestSuite\TestCase;
 
 /**
- * App\Model\Table\HistoricoAbastecimentosTable Test Case
+ * App\Model\Table\HistoricoabastecimentosTable Test Case
  */
-class HistoricoAbastecimentosTableTest extends TestCase
+class HistoricoabastecimentosTableTest extends TestCase
 {
 
     /**
      * Test subject
      *
-     * @var \App\Model\Table\HistoricoAbastecimentosTable
+     * @var \App\Model\Table\HistoricoabastecimentosTable
      */
-    public $HistoricoAbastecimentos;
+    public $Historicoabastecimentos;
 
     /**
      * Fixtures
@@ -24,12 +24,14 @@ class HistoricoAbastecimentosTableTest extends TestCase
      * @var array
      */
     public $fixtures = [
-        'app.historico_abastecimentos',
+        'app.historicoabastecimentos',
         'app.veiculos',
         'app.users',
+        'app.tipousuarios',
         'app.modelos',
-        'app.veiculo_fuels',
-        'app.historico_precos'
+        'app.historicoabastecimentos',
+        'app.historicoprecos',
+        'app.veiculofuels'
     ];
 
     /**
@@ -40,8 +42,8 @@ class HistoricoAbastecimentosTableTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $config = TableRegistry::exists('HistoricoAbastecimentos') ? [] : ['className' => 'App\Model\Table\HistoricoAbastecimentosTable'];
-        $this->HistoricoAbastecimentos = TableRegistry::get('HistoricoAbastecimentos', $config);
+        $config = TableRegistry::exists('Historicoabastecimentos') ? [] : ['className' => 'App\Model\Table\HistoricoabastecimentosTable'];
+        $this->Historicoabastecimentos = TableRegistry::get('Historicoabastecimentos', $config);
     }
 
     /**
@@ -51,7 +53,7 @@ class HistoricoAbastecimentosTableTest extends TestCase
      */
     public function tearDown()
     {
-        unset($this->HistoricoAbastecimentos);
+        unset($this->Historicoabastecimentos);
 
         parent::tearDown();
     }

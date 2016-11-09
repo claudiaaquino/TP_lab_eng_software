@@ -1,22 +1,22 @@
 <?php
 namespace App\Test\TestCase\Model\Table;
 
-use App\Model\Table\VeiculoFuelsTable;
+use App\Model\Table\VeiculofuelsTable;
 use Cake\ORM\TableRegistry;
 use Cake\TestSuite\TestCase;
 
 /**
- * App\Model\Table\VeiculoFuelsTable Test Case
+ * App\Model\Table\VeiculofuelsTable Test Case
  */
-class VeiculoFuelsTableTest extends TestCase
+class VeiculofuelsTableTest extends TestCase
 {
 
     /**
      * Test subject
      *
-     * @var \App\Model\Table\VeiculoFuelsTable
+     * @var \App\Model\Table\VeiculofuelsTable
      */
-    public $VeiculoFuels;
+    public $Veiculofuels;
 
     /**
      * Fixtures
@@ -24,16 +24,20 @@ class VeiculoFuelsTableTest extends TestCase
      * @var array
      */
     public $fixtures = [
-        'app.veiculo_fuels',
+        'app.veiculofuels',
         'app.veiculos',
         'app.users',
+        'app.tipousuarios',
         'app.modelos',
-        'app.historico_abastecimentos',
-        'app.historico_precos',
+        'app.historicoabastecimentos',
+        'app.historicoprecos',
         'app.postos',
-        'app.posto_fuels',
-        'app.posto_pagamento_forma',
-        'app.fuels'
+        'app.historicoprecos',
+        'app.fuels',
+        'app.postofuels',
+        'app.veiculofuels',
+        'app.historicoabastecimentos',
+        'app.postopagamentoforma'
     ];
 
     /**
@@ -44,8 +48,8 @@ class VeiculoFuelsTableTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $config = TableRegistry::exists('VeiculoFuels') ? [] : ['className' => 'App\Model\Table\VeiculoFuelsTable'];
-        $this->VeiculoFuels = TableRegistry::get('VeiculoFuels', $config);
+        $config = TableRegistry::exists('Veiculofuels') ? [] : ['className' => 'App\Model\Table\VeiculofuelsTable'];
+        $this->Veiculofuels = TableRegistry::get('Veiculofuels', $config);
     }
 
     /**
@@ -55,7 +59,7 @@ class VeiculoFuelsTableTest extends TestCase
      */
     public function tearDown()
     {
-        unset($this->VeiculoFuels);
+        unset($this->Veiculofuels);
 
         parent::tearDown();
     }

@@ -1,9 +1,7 @@
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
+<nav class="large-1 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Modelo'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Veiculos'), ['controller' => 'Veiculos', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Veiculo'), ['controller' => 'Veiculos', 'action' => 'add']) ?></li>
+        <li class="heading"><?= __('Ações') ?></li>
+        <li><?= $this->Html->link(__('Novo'), ['action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="modelos index large-9 medium-8 columns content">
@@ -30,7 +28,7 @@
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $modelo->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $modelo->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $modelo->id], ['confirm' => __('Are you sure you want to delete # {0}?', $modelo->id)]) ?>
+                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $modelo->id], ['confirm' => __('Tem certeza que deseja deletar esse registro # {0}?', $modelo->id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>

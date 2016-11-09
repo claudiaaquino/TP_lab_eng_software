@@ -8,6 +8,7 @@ use Cake\ORM\Entity;
  * User Entity
  *
  * @property int $id
+ * @property int $tipousuario_id
  * @property string $username
  * @property string $password
  * @property \Cake\I18n\Time $dt_nascimento
@@ -15,6 +16,8 @@ use Cake\ORM\Entity;
  * @property \Cake\I18n\Time $last_login
  * @property \Cake\I18n\Time $last_update
  * @property int $status
+ * 
+ * @property \App\Model\Entity\Modelo $tipousuario 
  */
 class User extends Entity {
 

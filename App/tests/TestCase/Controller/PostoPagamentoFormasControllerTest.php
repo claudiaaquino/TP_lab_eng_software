@@ -16,18 +16,18 @@ class PostoPagamentoFormasControllerTest extends IntegrationTestCase
      * @var array
      */
     public $fixtures = [
-        'app.posto_pagamento_formas',
+        'app.postopagamentoformas',
         'app.postos',
-        'app.historico_precos',
+        'app.historicoprecos',
         'app.fuels',
-        'app.posto_fuels',
-        'app.veiculo_fuels',
+        'app.postofuels',
+        'app.veiculofuels',
         'app.veiculos',
         'app.users',
         'app.modelos',
-        'app.historico_abastecimentos',
-        'app.posto_pagamento_forma',
-        'app.pagamento_formas'
+        'app.historicoabastecimentos',
+        'app.postopagamentoforma',
+        'app.pagamentoformas'
     ];
 
     /**

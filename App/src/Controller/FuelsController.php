@@ -34,7 +34,7 @@ class FuelsController extends AppController
     public function view($id = null)
     {
         $fuel = $this->Fuels->get($id, [
-            'contain' => ['HistoricoPrecos', 'PostoFuels', 'VeiculoFuels']
+            'contain' => ['Postofuels.Postos']
         ]);
 
         $this->set('fuel', $fuel);
@@ -52,11 +52,11 @@ class FuelsController extends AppController
         if ($this->request->is('post')) {
             $fuel = $this->Fuels->patchEntity($fuel, $this->request->data);
             if ($this->Fuels->save($fuel)) {
-                $this->Flash->success(__('The fuel has been saved.'));
+                $this->Flash->success(__('O registro de fuel foi salvo.'));
 
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error(__('The fuel could not be saved. Please, try again.'));
+                $this->Flash->error(__('O registro de fuel não pôde ser salvo. Por favor, tente novamente.'));
             }
         }
         $this->set(compact('fuel'));
@@ -78,11 +78,11 @@ class FuelsController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $fuel = $this->Fuels->patchEntity($fuel, $this->request->data);
             if ($this->Fuels->save($fuel)) {
-                $this->Flash->success(__('The fuel has been saved.'));
+                $this->Flash->success(__('O registro de fuel foi salvo.'));
 
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error(__('The fuel could not be saved. Please, try again.'));
+                $this->Flash->error(__('O registro de fuel não pôde ser salvo. Por favor, tente novamente.'));
             }
         }
         $this->set(compact('fuel'));
@@ -101,9 +101,9 @@ class FuelsController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $fuel = $this->Fuels->get($id);
         if ($this->Fuels->delete($fuel)) {
-            $this->Flash->success(__('The fuel has been deleted.'));
+            $this->Flash->success(__('O registro de fuel foi deletado.'));
         } else {
-            $this->Flash->error(__('The fuel could not be deleted. Please, try again.'));
+            $this->Flash->error(__('O registro de fuel não pôde ser deletado. Por favor, tente novamente.'));
         }
 
         return $this->redirect(['action' => 'index']);

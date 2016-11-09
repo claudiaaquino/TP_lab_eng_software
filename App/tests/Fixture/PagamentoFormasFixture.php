@@ -4,10 +4,10 @@ namespace App\Test\Fixture;
 use Cake\TestSuite\Fixture\TestFixture;
 
 /**
- * PagamentoFormasFixture
+ * PagamentoformasFixture
  *
  */
-class PagamentoFormasFixture extends TestFixture
+class PagamentoformasFixture extends TestFixture
 {
 
     /**
@@ -41,8 +41,8 @@ class PagamentoFormasFixture extends TestFixture
         [
             'id' => 1,
             'descricao' => 'Lorem ipsum dolor sit amet',
-            'dt_cadastro' => 1476330734,
-            'dt_modificado' => 1476330734,
+            'dt_cadastro' => 1477446971,
+            'dt_modificado' => 1477446971,
             'status' => 1
         ],
     ];

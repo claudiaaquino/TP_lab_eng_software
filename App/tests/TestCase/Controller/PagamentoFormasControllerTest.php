@@ -16,8 +16,8 @@ class PagamentoFormasControllerTest extends IntegrationTestCase
      * @var array
      */
     public $fixtures = [
-        'app.pagamento_formas',
-        'app.posto_pagamento_forma'
+        'app.pagamentoformas',
+        'app.postopagamentoforma'
     ];
 
     /**

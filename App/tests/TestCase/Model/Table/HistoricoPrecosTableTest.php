@@ -1,22 +1,22 @@
 <?php
 namespace App\Test\TestCase\Model\Table;
 
-use App\Model\Table\HistoricoPrecosTable;
+use App\Model\Table\HistoricoprecosTable;
 use Cake\ORM\TableRegistry;
 use Cake\TestSuite\TestCase;
 
 /**
- * App\Model\Table\HistoricoPrecosTable Test Case
+ * App\Model\Table\HistoricoprecosTable Test Case
  */
-class HistoricoPrecosTableTest extends TestCase
+class HistoricoprecosTableTest extends TestCase
 {
 
     /**
      * Test subject
      *
-     * @var \App\Model\Table\HistoricoPrecosTable
+     * @var \App\Model\Table\HistoricoprecosTable
      */
-    public $HistoricoPrecos;
+    public $Historicoprecos;
 
     /**
      * Fixtures
@@ -24,16 +24,19 @@ class HistoricoPrecosTableTest extends TestCase
      * @var array
      */
     public $fixtures = [
-        'app.historico_precos',
+        'app.historicoprecos',
         'app.postos',
-        'app.posto_fuels',
-        'app.posto_pagamento_forma',
+        'app.historicoprecos',
         'app.fuels',
-        'app.veiculo_fuels',
-        'app.historico_abastecimentos',
+        'app.postofuels',
+        'app.veiculofuels',
+        'app.historicoabastecimentos',
         'app.veiculos',
         'app.users',
-        'app.modelos'
+        'app.tipousuarios',
+        'app.modelos',
+        'app.historicoabastecimentos',
+        'app.postopagamentoforma'
     ];
 
     /**
@@ -44,8 +47,8 @@ class HistoricoPrecosTableTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $config = TableRegistry::exists('HistoricoPrecos') ? [] : ['className' => 'App\Model\Table\HistoricoPrecosTable'];
-        $this->HistoricoPrecos = TableRegistry::get('HistoricoPrecos', $config);
+        $config = TableRegistry::exists('Historicoprecos') ? [] : ['className' => 'App\Model\Table\HistoricoprecosTable'];
+        $this->Historicoprecos = TableRegistry::get('Historicoprecos', $config);
     }
 
     /**
@@ -55,7 +58,7 @@ class HistoricoPrecosTableTest extends TestCase
      */
     public function tearDown()
     {
-        unset($this->HistoricoPrecos);
+        unset($this->Historicoprecos);
 
         parent::tearDown();
     }
