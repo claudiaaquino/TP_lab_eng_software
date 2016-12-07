@@ -15,7 +15,7 @@
                 <th scope="col"><?= $this->Paginator->sort('dt_cadastro') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('dt_modificado') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('status') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
+                <th scope="col" class="actions"><?= __('Ações') ?></th>
             </tr>
         </thead>
         <tbody>
@@ -28,9 +28,9 @@
                     <td><?= h($posto->dt_modificado) ?></td>
                     <td><?= $this->Number->format($posto->status) ?></td>
                     <td class="actions">
-                        <?= $this->Html->link(__('View'), ['action' => 'view', $posto->id]) ?>
-                        <?= $this->Html->link(__('Edit'), ['action' => 'edit', $posto->id]) ?>
-                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $posto->id], ['confirm' => __('Tem certeza que deseja deletar esse registro # {0}?', $posto->id)]) ?>
+                        <?= $this->Html->link(__('Visualizar'), ['action' => 'view', $posto->id]) ?>
+                        <?= $this->Html->link(__('Editar'), ['action' => 'edit', $posto->id]) ?>
+                        <?= $this->Form->postLink(__('Deletar'), ['action' => 'delete', $posto->id], ['confirm' => __('Tem certeza que deseja deletar esse registro # {0}?', $posto->id)]) ?>
                     </td>
                 </tr>
             <?php endforeach; ?>
@@ -38,9 +38,9 @@
     </table>
     <div class="paginator">
         <ul class="pagination">
-            <?= $this->Paginator->prev('< ' . __('previous')) ?>
+            <?= $this->Paginator->prev('< ' . __('anterior')) ?>
             <?= $this->Paginator->numbers() ?>
-            <?= $this->Paginator->next(__('next') . ' >') ?>
+            <?= $this->Paginator->next(__('próximo') . ' >') ?>
         </ul>
         <p><?= $this->Paginator->counter() ?></p>
     </div>

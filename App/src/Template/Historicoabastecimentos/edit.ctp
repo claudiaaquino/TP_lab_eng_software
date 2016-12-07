@@ -2,7 +2,7 @@
     <ul class="side-nav">
          <li><?= $this->Html->link(__('Registrar Novo Abastecimento'), ['action' => 'add']) ?> </li>
         <li><?= $this->Form->postLink(
-                __('Delete'),
+                __('Deletar'),
                 ['action' => 'deletar', $historicoAbastecimento->id],
                 ['confirm' => __('Tem certeza que deseja deletar esse registro # {0}?', $historicoAbastecimento->id)]
             )
@@ -15,7 +15,6 @@
         <legend><?= __('Editar Historico Abastecimento') ?></legend>
         <?php
             echo $this->Form->input('veiculo_id', ['options' => $veiculos]);
-            echo $this->Form->input('historicopreco_id', ['options' => $historicoPrecos]);
             echo $this->Form->input('litros');
             echo $this->Form->input('valor_total');
             echo $this->Form->input('km_atual');
@@ -24,6 +23,6 @@
             echo $this->Form->input('dt_abastecimento');
         ?>
     </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
+    <?= $this->Form->button(__('Salvar')) ?>
     <?= $this->Form->end() ?>
 </div>

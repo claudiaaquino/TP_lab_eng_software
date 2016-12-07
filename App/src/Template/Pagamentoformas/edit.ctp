@@ -1,6 +1,6 @@
 <nav class="large-1 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
+        <li class="heading"><?= __('Ações') ?></li>
         <li><?= $this->Form->postLink(
                 __('Deletar'),
                 ['action' => 'delete', $pagamentoForma->id],
@@ -18,6 +18,6 @@
             echo $this->Form->input('descricao');
         ?>
     </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
+    <?= $this->Form->button(__('Salvar')) ?>
     <?= $this->Form->end() ?>
 </div>

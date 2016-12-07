@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Controller\AppController;
 use Cake\Event\Event;
+
 /**
  * Users Controller
  *
@@ -22,8 +23,8 @@ class UsersController extends AppController {
         $this->set(compact('users'));
         $this->set('_serialize', ['users']);
     }
-    
-     public function beforeFilter(Event $event) {
+
+    public function beforeFilter(Event $event) {
         parent::beforeFilter($event);
         $this->Auth->allow(['add', 'login']);
     }
@@ -39,6 +40,13 @@ class UsersController extends AppController {
         $user = $this->Users->get($id, [
             'contain' => ['Veiculos']
         ]);
+
+        $this->set('user', $user);
+        $this->set('_serialize', ['user']);
+    }
+
+    public function minhaconta($id = null) {
+        $user = $this->Users->get($id);
 
         $this->set('user', $user);
         $this->set('_serialize', ['user']);
@@ -72,7 +80,8 @@ class UsersController extends AppController {
      * @return \Cake\Network\Response|void Redirects on successful edit, renders view otherwise.
      * @throws \Cake\Network\Exception\NotFoundException When record not found.
      */
-    public function edit($id = null) {
+    public function edit() {
+        $id = $this->request->session()->read('Auth.User.id');
         $user = $this->Users->get($id, [
             'contain' => []
         ]);
@@ -81,7 +90,7 @@ class UsersController extends AppController {
             if ($this->Users->save($user)) {
                 $this->Flash->success(__('O registro de user foi salvo.'));
 
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect(['action' => 'edit']);
             } else {
                 $this->Flash->error(__('O registro de user não pôde ser salvo. Por favor, tente novamente.'));
             }

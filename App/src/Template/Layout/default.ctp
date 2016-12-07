@@ -49,6 +49,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                             <!--<li></?= $this->Html->link(__('Registrar Abastecimento'), ['controller' => 'Historicoabastecimentos', 'action' => 'add'/*, $veiculo->id*/]) ?> </li>-->
                             <li><?= $this->Html->link(__('Abastecimentos'), ['controller' => 'Historicoabastecimentos', 'action' => 'index'/* , $veiculo->id */]) ?> </li>
                             <li><?= $this->Html->link(__('Combustíveis'), ['controller' => 'Veiculofuels', 'action' => 'index'/* , $veiculo->id */]) ?> </li>
+                            <li><?= $this->Html->link('Minha conta', ['controller' => 'users', 'action' => 'edit']) ?></li>
                         <?php } ?>
 
                         <li><?= $this->Html->link('Sair', ['controller' => 'users', 'action' => 'logout']) ?></li>
@@ -64,13 +65,14 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             <?php if ($loggedIn && $tipousuario != 2) { ?>
                 <nav class="large-2 medium-4 columns" id="actions-sidebar">
                     <ul class="side-nav">
-                        <?php if ($tipousuario == 1) { ?>
+                        <?php if ($tipousuario == 1) {//ADMIN ?>
                             <li><?= $this->Html->link(__('Modelos'), ['controller' => 'Modelos', 'action' => 'index']) ?></li>
                             <li><?= $this->Html->link(__('Combustíveis'), ['controller' => 'Fuels', 'action' => 'index']) ?></li>
                             <li><?= $this->Html->link(__('Formas de Pagamento'), ['controller' => 'Pagamentoformas', 'action' => 'index']) ?></li>
                             <li><?= $this->Html->link(__('Postos'), ['controller' => 'Postos', 'action' => 'index']) ?></li>
 
-                        <?php } else if ($tipousuario == 3) { ?>
+                        <?php } else if ($tipousuario == 3) {//POSTO ?>
+                            <li><?= $this->Html->link(__('Minha rede de Postos'), ['controller' => 'Postos', 'action' => 'index']) ?></li>
                             <li><?= $this->Html->link(__('Histórico de Preço'), ['controller' => 'Historicoprecos', 'action' => 'index']) ?></li>
                             <li><?= $this->Html->link(__('Histórico de Abastecimentos'), ['controller' => 'Historicoabastecimentos', 'action' => 'index']) ?></li>
                             <li><?= $this->Html->link(__('Combustíveis'), ['controller' => 'Postofuels', 'action' => 'index']) ?></li>

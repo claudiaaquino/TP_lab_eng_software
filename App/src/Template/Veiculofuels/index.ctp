@@ -9,8 +9,8 @@
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('veiculo_id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('fuel_id') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('fuel_id', "Combustível") ?></th>
+                <th scope="col" class="actions"><?= __('Ações') ?></th>
             </tr>
         </thead>
         <tbody>
@@ -19,7 +19,7 @@
                     <td><?= $veiculoFuel->has('veiculo') ? $this->Html->link($veiculoFuel->veiculo->placa, ['controller' => 'Veiculos', 'action' => 'view', $veiculoFuel->veiculo->id]) : '' ?></td>
                     <td><?= $veiculoFuel->fuel->descricao; ?></td>
                     <td class="actions">
-                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $veiculoFuel->id], ['confirm' => __('Tem certeza que deseja deletar esse registro # {0}?', $veiculoFuel->id)]) ?>
+                        <?= $this->Form->postLink(__('Deletar'), ['action' => 'delete', $veiculoFuel->id], ['confirm' => __('Tem certeza que deseja deletar esse registro # {0}?', $veiculoFuel->id)]) ?>
                     </td>
                 </tr>
             <?php endforeach; ?>
@@ -27,9 +27,9 @@
     </table>
     <div class="paginator">
         <ul class="pagination">
-            <?= $this->Paginator->prev('< ' . __('previous')) ?>
+            <?= $this->Paginator->prev('< ' . __('anterior')) ?>
             <?= $this->Paginator->numbers() ?>
-            <?= $this->Paginator->next(__('next') . ' >') ?>
+            <?= $this->Paginator->next(__('próximo') . ' >') ?>
         </ul>
         <p><?= $this->Paginator->counter() ?></p>
     </div>

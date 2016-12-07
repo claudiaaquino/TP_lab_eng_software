@@ -1,6 +1,6 @@
 <nav class="large-1 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
+        <li class="heading"><?= __('Ações') ?></li>
        <li><?= $this->Html->link(__('Ver Formas Vnculadas'), ['action' => 'index']) ?> </li>        
     </ul>
 </nav>
@@ -12,7 +12,7 @@
             <td><?= $postoPagamentoForma->has('posto') ? $this->Html->link($postoPagamentoForma->posto->id, ['controller' => 'Postos', 'action' => 'view', $postoPagamentoForma->posto->id]) : '' ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Pagamento Forma') ?></th>
+            <th scope="row"><?= __('Forma de Pagamento') ?></th>
             <td><?= $postoPagamentoForma->has('pagamentoforma') ? $this->Html->link($postoPagamentoForma->pagamentoforma->id, ['controller' => 'PagamentoFormas', 'action' => 'view', $postoPagamentoForma->pagamentoforma->id]) : '' ?></td>
         </tr>
         <tr>

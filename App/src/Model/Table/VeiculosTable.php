@@ -95,7 +95,9 @@ class VeiculosTable extends Table
     {
         $rules->add($rules->existsIn(['user_id'], 'Users'));
         $rules->add($rules->existsIn(['modelo_id'], 'Modelos'));
+        $rules->add($rules->isUnique(['placa'],"Essa placa já está em uso por outro veículo. Você deve escolher outro nome."));
 
         return $rules;
     }
+   
 }

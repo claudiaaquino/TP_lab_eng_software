@@ -94,8 +94,8 @@ class UsersTable extends Table {
      * @return \Cake\ORM\RulesChecker
      */
     public function buildRules(RulesChecker $rules) {
-        $rules->add($rules->isUnique(['username']));
-        $rules->add($rules->isUnique(['email']));
+        $rules->add($rules->isUnique(['username'],"Esse usuário já está em uso. "));
+        $rules->add($rules->isUnique(['email'], "Esse email já está em uso." ));
 
         return $rules;
     }

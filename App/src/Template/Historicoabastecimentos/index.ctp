@@ -17,7 +17,7 @@
                 <th scope="col"><?= $this->Paginator->sort('preco_litro') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('litros') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('valor_total') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
+                <th scope="col" class="actions"><?= __('Ações') ?></th>
             </tr>
         </thead>
         <tbody>
@@ -31,6 +31,7 @@
                     <?php if ($tipousuario == 2) { ?>
                         <td class="actions">
                             <?= $this->Html->link(__('Visualizar'), ['action' => 'view', $historicoAbastecimento->id]) ?>
+                            <?= $this->Html->link(__('Editar'), ['action' => 'edit', $historicoAbastecimento->id]) ?>
                             <?= $this->Form->postLink(__('Deletar'), ['action' => 'delete', $historicoAbastecimento->id], ['confirm' => __('Tem certeza que deseja deletar esse registro # {0}?', $historicoAbastecimento->id)]) ?>
                         </td>
                     <?php } ?>
@@ -40,9 +41,9 @@
     </table>
     <div class="paginator">
         <ul class="pagination">
-            <?= $this->Paginator->prev('< ' . __('previous')) ?>
+            <?= $this->Paginator->prev('< ' . __('anterior')) ?>
             <?= $this->Paginator->numbers() ?>
-            <?= $this->Paginator->next(__('next') . ' >') ?>
+            <?= $this->Paginator->next(__('próximo') . ' >') ?>
         </ul>
         <p><?= $this->Paginator->counter() ?></p>
     </div>

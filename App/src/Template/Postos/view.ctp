@@ -33,7 +33,7 @@
             <table cellpadding="0" cellspacing="0">
                 <tr>
                     <th scope="col"><?= __('Id') ?></th>
-                    <th scope="col"><?= __('Fuel Id') ?></th>
+                    <th scope="col"><?= __('Combustível') ?></th>
                     <th scope="col"><?= __('Preco Litro') ?></th>
                     <th scope="col"><?= __('Dt Cadastro') ?></th>
                     <th scope="col"><?= __('Status') ?></th>
@@ -56,7 +56,7 @@
             <table cellpadding="0" cellspacing="0">
                 <tr>
                     <th scope="col"><?= __('Id') ?></th>
-                    <th scope="col"><?= __('Fuel Id') ?></th>
+                    <th scope="col"><?= __('Combustível') ?></th>
                     <th scope="col"><?= __('Dt Cadastro') ?></th>
                     <th scope="col"><?= __('Status') ?></th>
                 </tr>
@@ -77,7 +77,7 @@
             <table cellpadding="0" cellspacing="0">
                 <tr>
                     <th scope="col"><?= __('Id') ?></th>
-                    <th scope="col"><?= __('Pagamento Forma Id') ?></th>
+                    <th scope="col"><?= __('Forma de Pagamento') ?></th>
                     <th scope="col"><?= __('Dt Cadastro') ?></th>
                     <th scope="col"><?= __('Status') ?></th>
                 </tr>

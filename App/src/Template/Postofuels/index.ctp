@@ -1,6 +1,6 @@
 <nav class="large-1 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
+        <li class="heading"><?= __('Ações') ?></li>
         <li><?= $this->Html->link(__('Cadastrar Outro'), ['action' => 'add']) ?></li>
     </ul>
 </nav>
@@ -11,10 +11,10 @@
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('posto_id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('fuel_id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('fuel_id', "Combustível") ?></th>
                 <th scope="col"><?= $this->Paginator->sort('dt_cadastro') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('status') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
+                <th scope="col" class="actions"><?= __('Ações') ?></th>
             </tr>
         </thead>
         <tbody>
@@ -25,7 +25,7 @@
                 <td><?= $postoFuel->has('fuel') ? $this->Html->link($postoFuel->fuel->descricao, ['controller' => 'Fuels', 'action' => 'view', $postoFuel->fuel->id]) : '' ?></td>
                 <td><?= h($postoFuel->dt_cadastro) ?></td>
                 <td><?= $this->Number->format($postoFuel->status) ?></td>
-                <td class="actions"><?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $postoFuel->id], ['confirm' => __('Tem certeza que deseja deletar esse registro # {0}?', $postoFuel->id)]) ?>
+                <td class="actions"><?= $this->Form->postLink(__('Deletar'), ['action' => 'delete', $postoFuel->id], ['confirm' => __('Tem certeza que deseja deletar esse registro # {0}?', $postoFuel->id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>
@@ -33,9 +33,9 @@
     </table>
     <div class="paginator">
         <ul class="pagination">
-            <?= $this->Paginator->prev('< ' . __('previous')) ?>
+            <?= $this->Paginator->prev('< ' . __('anterior')) ?>
             <?= $this->Paginator->numbers() ?>
-            <?= $this->Paginator->next(__('next') . ' >') ?>
+            <?= $this->Paginator->next(__('próximo') . ' >') ?>
         </ul>
         <p><?= $this->Paginator->counter() ?></p>
     </div>

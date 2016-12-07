@@ -3,7 +3,7 @@
         <li class="heading"><?= __('Ações') ?></li>
         <li><?=
             $this->Form->postLink(
-                    __('Delete'), ['action' => 'delete', $fuel->id], ['confirm' => __('Tem certeza que deseja deletar esse registro # {0}?', $fuel->id)]
+                    __('Deletar'), ['action' => 'delete', $fuel->id], ['confirm' => __('Tem certeza que deseja deletar esse registro # {0}?', $fuel->id)]
             )
             ?></li>
         <li><?= $this->Html->link(__('Listar'), ['action' => 'index']) ?></li>
@@ -17,6 +17,6 @@
         echo $this->Form->input('descricao');
         ?>
     </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
+    <?= $this->Form->button(__('Salvar')) ?>
     <?= $this->Form->end() ?>
 </div>

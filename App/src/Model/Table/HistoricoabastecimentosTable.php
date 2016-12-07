@@ -77,6 +77,8 @@ class HistoricoabastecimentosTable extends Table {
 
         $validator
                 ->integer('avaliacao_posto')
+                ->greaterThan('avaliacao_posto',0,"A avaliação do Posto deve ser entre 1 e 5.")
+                ->lessThanOrEqual('avaliacao_posto',5,"A avaliação do Posto deve ser entre 1 e 5.")
                 ->allowEmpty('avaliacao_posto');
 
         $validator

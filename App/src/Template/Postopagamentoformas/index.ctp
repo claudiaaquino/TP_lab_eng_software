@@ -1,6 +1,6 @@
 <nav class="large-1 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
+        <li class="heading"><?= __('Ações') ?></li>
         <li><?= $this->Html->link(__('Nova Forma Pagamento'), ['action' => 'add']) ?></li>
     </ul>
 </nav>
@@ -14,7 +14,7 @@
                 <th scope="col"><?= $this->Paginator->sort('pagamentoforma_id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('dt_cadastro') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('status') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
+                <th scope="col" class="actions"><?= __('Ações') ?></th>
             </tr>
         </thead>
         <tbody>
@@ -25,7 +25,7 @@
                 <td><?= $postoPagamentoForma->has('pagamentoforma') ? $this->Html->link($postoPagamentoForma->pagamentoforma->descricao, ['controller' => 'PagamentoFormas', 'action' => 'view', $postoPagamentoForma->pagamentoforma->id]) : '' ?></td>
                 <td><?= h($postoPagamentoForma->dt_cadastro) ?></td>
                 <td><?= $this->Number->format($postoPagamentoForma->status) ?></td>
-                <td class="actions"><?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $postoPagamentoForma->id], ['confirm' => __('Tem certeza que deseja deletar esse registro # {0}?', $postoPagamentoForma->id)]) ?>
+                <td class="actions"><?= $this->Form->postLink(__('Deletar'), ['action' => 'delete', $postoPagamentoForma->id], ['confirm' => __('Tem certeza que deseja deletar esse registro # {0}?', $postoPagamentoForma->id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>
@@ -33,9 +33,9 @@
     </table>
     <div class="paginator">
         <ul class="pagination">
-            <?= $this->Paginator->prev('< ' . __('previous')) ?>
+            <?= $this->Paginator->prev('< ' . __('anterior')) ?>
             <?= $this->Paginator->numbers() ?>
-            <?= $this->Paginator->next(__('next') . ' >') ?>
+            <?= $this->Paginator->next(__('próximo') . ' >') ?>
         </ul>
         <p><?= $this->Paginator->counter() ?></p>
     </div>

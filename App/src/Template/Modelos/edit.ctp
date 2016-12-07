@@ -2,7 +2,7 @@
     <ul class="side-nav">
         <li class="heading"><?= __('Ações') ?></li>
         <li><?= $this->Form->postLink(
-                __('Delete'),
+                __('Deletar'),
                 ['action' => 'delete', $modelo->id],
                 ['confirm' => __('Tem certeza que deseja deletar esse registro # {0}?', $modelo->id)]
             )
@@ -18,6 +18,6 @@
             echo $this->Form->input('descricao');
         ?>
     </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
+    <?= $this->Form->button(__('Salvar')) ?>
     <?= $this->Form->end() ?>
 </div>

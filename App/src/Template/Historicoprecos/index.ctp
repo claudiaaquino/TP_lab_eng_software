@@ -1,6 +1,6 @@
 <nav class="large-1 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
+        <li class="heading"><?= __('Ações') ?></li>
         <li><?= $this->Html->link(__('Cadastrar Preço Atualizado'), ['action' => 'add']) ?> </li>
           </ul>
 </nav>
@@ -9,10 +9,10 @@
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
+                <th scope="col" class="actions"><?= __('Ações') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('dt_cadastro') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('posto_id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('fuel_id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('posto_id',"Posto") ?></th>
+                <th scope="col"><?= $this->Paginator->sort('fuel_id','Combustível') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('preco_litro') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('status') ?></th>
             </tr>
@@ -21,8 +21,8 @@
             <?php foreach ($historicoPrecos as $historicoPreco): ?>
             <tr>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $historicoPreco->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $historicoPreco->id], ['confirm' => __('Tem certeza que deseja deletar esse registro # {0}?', $historicoPreco->id)]) ?>
+                    <?= $this->Html->link(__('Visualizar'), ['action' => 'view', $historicoPreco->id]) ?>
+                    <?= $this->Form->postLink(__('Deletar'), ['action' => 'delete', $historicoPreco->id], ['confirm' => __('Tem certeza que deseja deletar esse registro # {0}?', $historicoPreco->id)]) ?>
                 </td>
                 <td><?= h($historicoPreco->dt_cadastro) ?></td>
                 <td><?= $historicoPreco->has('posto') ? $this->Html->link($historicoPreco->posto->nome, ['controller' => 'Postos', 'action' => 'view', $historicoPreco->posto->id]) : '' ?></td>
@@ -35,7 +35,7 @@
     </table>
     <div class="paginator">
         <ul class="pagination">
-            <?= $this->Paginator->prev('< ' . __('previous')) ?>
+            <?= $this->Paginator->prev('< ' . __('anterior')) ?>
             <?= $this->Paginator->numbers() ?>
             <?= $this->Paginator->next(__('next') . ' >') ?>
         </ul>

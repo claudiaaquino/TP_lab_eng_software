@@ -1,7 +1,7 @@
 <nav class="large-1 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Form->postLink(__('Deleta Registro'), ['action' => 'delete', $historicoPreco->id], ['confirm' => __('Tem certeza que deseja deletar esse registro # {0}?', $historicoPreco->id)]) ?> </li>
+        <li class="heading"><?= __('Ações') ?></li>
+        <li><?= $this->Form->postLink(__('Deletar Registro'), ['action' => 'delete', $historicoPreco->id], ['confirm' => __('Tem certeza que deseja deletar esse registro # {0}?', $historicoPreco->id)]) ?> </li>
         <li><?= $this->Html->link(__('Historico Precos'), ['action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('Novo Preco'), ['action' => 'add']) ?> </li>
           </ul>
@@ -14,7 +14,7 @@
             <td><?= $historicoPreco->has('posto') ? $this->Html->link($historicoPreco->posto->nome, ['controller' => 'Postos', 'action' => 'view', $historicoPreco->posto->id]) : '' ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Fuel') ?></th>
+            <th scope="row"><?= __('Combustível') ?></th>
             <td><?= $historicoPreco->has('fuel') ? $this->Html->link($historicoPreco->fuel->descricao, ['controller' => 'Fuels', 'action' => 'view', $historicoPreco->fuel->id]) : '' ?></td>
         </tr>
         <tr>

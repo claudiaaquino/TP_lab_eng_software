@@ -3,14 +3,16 @@
     <fieldset>
         <legend><?= __('Registrar Novo Abastecimento') ?></legend>
         <?php
-            echo $this->Form->input('veiculo_id', ['options' => $veiculos]);
-            echo $this->Form->input('posto_id', ['options' => $postos]);
-            echo $this->Form->input('fuel_id', ['options' => $fuels]);
-            echo $this->Form->input('litros');
-            echo $this->Form->input('km_atual');
-            echo $this->Form->input('dt_abastecimento');
+        echo $this->Form->input('veiculo_id', ['options' => $veiculos]);
+        echo $this->Form->input('posto_id', ['options' => $postos]);
+        echo $this->Form->input('fuel_id', ['options' => $fuels, "label" => 'Combustível']);
+        echo $this->Form->input('litros');
+        echo $this->Form->input('km_atual');
+        echo $this->Form->input('avaliacao_posto', ["label" => 'Avaliação do Posto. De 1 (mínima) a 5 (máxima)', 
+            'type' => 'number']);
+        echo $this->Form->input('dt_abastecimento');
         ?>
     </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
+    <?= $this->Form->button(__('Salvar')) ?>
     <?= $this->Form->end() ?>
 </div>
